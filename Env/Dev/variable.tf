@@ -15,3 +15,4 @@ variable "tags" {
 
 
 variable "module_rg" {}
+variable "module_stg" {}
