@@ -12,3 +12,6 @@ module_rg = {
   }
   
 }
+subscription_id = "1045b2e8-43bd-4126-ad19-ca7b9ae1d5c4"
+target          = "dev"
+
