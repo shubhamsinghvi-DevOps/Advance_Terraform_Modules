@@ -1,0 +1,29 @@
+pool: terraform_agent
+trigger: none
+jobs:
+ - job: TerraformInitialization
+   displayName: Terraform_Init
+   steps:
+   - task: TerraformTask@5
+     displayName: Intilization_Terraform
+     inputs:
+       provider: 'azurerm'
+       command: 'init'
+       workingDirectory: '$(System.DefaultWorkingDirectory)/Env/Dev'
+       commandOptions: '-upgrade'
+       backendServiceArm: 'Adv_Terraform_Pipeline'
+       backendAzureRmResourceGroupName: 'shubham-terraform'
+       backendAzureRmStorageAccountName: 'terraformstg97077'
+       backendAzureRmContainerName: 'containerterraform'
+       backendAzureRmKey: 'terraform.tfstate'
+ 
+ - job: TerraformPlanining
+   displayName: Terraform_Plan
+   steps:
+   - task: TerraformTask@5
+     displayName: Plan_of_Resources
+     inputs:
+       provider: 'azurerm'
+       command: 'plan'
+       workingDirectory: '$(System.DefaultWorkingDirectory/Env/Dev'
+       environmentServiceNameAzureRM: 'Adv_Terraform_Pipeline'
