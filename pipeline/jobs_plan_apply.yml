@@ -18,7 +18,7 @@ jobs:
        backendAzureRmKey: 'terraform.tfstate'
  
  - job: TerraformPlanining
-  # dependsOn: TerraformInitialization
+   dependsOn: TerraformInitialization
    displayName: Terraform_Plan
    steps:
    - task: TerraformTask@5
