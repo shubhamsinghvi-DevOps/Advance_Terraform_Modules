@@ -29,12 +29,14 @@ jobs:
    displayName: Validation
    dependsOn: Terraform_Initialization_Planing
    pool: server
+
    steps:
-   - task: ManualIntervention@8
-     inputs:
-       instructions: 'please approve thid planing Request'
-       emailRecipients: 'abc@xyz.123'
-       
+    - task: ManualValidation@0
+      timeoutInMinutes: 1440
+      inputs:
+        notifyUsers: 'abc@xyz.123'
+        instructions: 'Please approve this Terraform plan request'
+          
 
  - job: Terraform_Applying
    dependsOn: Manual_validation
