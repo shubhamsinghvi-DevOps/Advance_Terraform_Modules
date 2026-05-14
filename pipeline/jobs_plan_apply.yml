@@ -25,5 +25,5 @@ jobs:
      inputs:
        provider: 'azurerm'
        command: 'plan'
-       workingDirectory: '$(System.DefaultWorkingDirectory/Env/Dev'
+       workingDirectory: '$(System.DefaultWorkingDirectory)/Env/Dev'
        environmentServiceNameAzureRM: 'Adv_Terraform_Pipeline'
