@@ -18,7 +18,7 @@ jobs:
        backendAzureRmKey: 'terraform.tfstate'
    
    - task: TerraformTask@5
-     displayName: Planing_AzureResources
+     displayName: Planing_Azure_Resources
      inputs:
        provider: 'azurerm'
        command: 'plan'
@@ -34,7 +34,7 @@ jobs:
      inputs:
        instructions: 'please approve thid planing Request'
        emailRecipients: 'abc@xyz.123'
-       onTimeout: 'resume'
+       
 
  - job: Terraform_Applying
    dependsOn: Manual_validation
