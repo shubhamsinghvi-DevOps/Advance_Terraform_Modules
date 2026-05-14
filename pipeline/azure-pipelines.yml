@@ -1,0 +1,28 @@
+pool: terraform_agent
+trigger: none
+
+steps:
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: 'latest'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/Env/Dev'
+    commandOptions: '-upgrade'
+    backendServiceArm: 'Adv_Terraform_Pipeline'
+    backendAzureRmResourceGroupName: 'shubham-terraform'
+    backendAzureRmStorageAccountName: 'terraformstg97077'
+    backendAzureRmContainerName: 'containerterraform'
+    backendAzureRmKey: 'terraform.tfstate'
+
+
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/Env/Dev'
+    environmentServiceNameAzureRM: 'Adv_Terraform_Pipeline'
