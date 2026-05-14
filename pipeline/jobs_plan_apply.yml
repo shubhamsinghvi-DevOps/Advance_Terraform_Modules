@@ -18,8 +18,21 @@ jobs:
        backendAzureRmKey: 'terraform.tfstate'
  
  - job: TerraformPlanining
+  # dependsOn: TerraformInitialization
    displayName: Terraform_Plan
    steps:
+   - task: TerraformTask@5
+     displayName: Intilization_Terraform
+     inputs:
+       provider: 'azurerm'
+       command: 'init'
+       workingDirectory: '$(System.DefaultWorkingDirectory)/Env/Dev'
+       commandOptions: '-upgrade'
+       backendServiceArm: 'Adv_Terraform_Pipeline'
+       backendAzureRmResourceGroupName: 'shubham-terraform'
+       backendAzureRmStorageAccountName: 'terraformstg97077'
+       backendAzureRmContainerName: 'containerterraform'
+       backendAzureRmKey: 'terraform.tfstate'
    - task: TerraformTask@5
      displayName: Plan_of_Resources
      inputs:
