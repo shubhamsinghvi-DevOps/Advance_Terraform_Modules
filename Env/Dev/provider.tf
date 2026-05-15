@@ -5,11 +5,12 @@ terraform {
       version = "4.66.0"
     }
   }
+
   backend "azurerm" {
-    resource_group_name = " "
-    storage_account_name= " "
-    container_name = " "
-    key = " " 
+    resource_group_name = "shubham-terraform1"
+    storage_account_name= "terraformstg970777"
+    container_name = "containerterraform"
+    key = ".tfstate" 
   }
 }
 
