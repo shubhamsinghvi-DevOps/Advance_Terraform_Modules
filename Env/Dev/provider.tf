@@ -6,7 +6,9 @@ terraform {
     }
   }
 
-  backend "azurerm" {}
+  backend "azurerm" {
+  use_azuread_auth = true
+}
     # resource_group_name = "shubham-terraform1"
     # storage_account_name= "terraformstg970777"
     # container_name = "containerterraform"
