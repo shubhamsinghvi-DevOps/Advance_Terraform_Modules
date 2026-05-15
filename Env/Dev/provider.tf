@@ -6,12 +6,12 @@ terraform {
     }
   }
 
-#   backend "azurerm" {
-#     resource_group_name = "shubham-terraform1"
-#     storage_account_name= "terraformstg970777"
-#     container_name = "containerterraform"
-#     key = ".tfstate" 
-#   }
+  backend "azurerm" {}
+    # resource_group_name = "shubham-terraform1"
+    # storage_account_name= "terraformstg970777"
+    # container_name = "containerterraform"
+    # key = ".tfstate" 
+
 }
 
 provider "azurerm" {
