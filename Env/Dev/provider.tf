@@ -6,9 +6,13 @@ terraform {
     }
   }
 
-   backend "azurerm" {
-   use_azuread_auth = true
-  }
+  #   backend "azurerm" {
+  # #  use_azuread_auth = true
+  #   resource_group_name = ""
+  #   storage_account_name = ""
+  #   container_name = ""
+  #   key = ""
+  #  }
 
 }
 

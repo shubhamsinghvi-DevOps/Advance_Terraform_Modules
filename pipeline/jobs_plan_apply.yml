@@ -18,6 +18,7 @@ jobs:
        backendAzureRmContainerName: 'containerterraform'
        backendAzureRmKey: 'terraform.tfstate'
    
+   
    - task: TerraformTask@5
      displayName: Planing_Azure_Resources
      inputs:

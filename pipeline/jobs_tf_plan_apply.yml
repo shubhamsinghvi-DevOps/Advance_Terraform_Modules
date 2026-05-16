@@ -13,8 +13,8 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)/Env/Dev'
     commandOptions: '-upgrade'
     backendServiceArm: 'Adv_Terraform_Pipeline'
-    backendAzureRmResourceGroupName: 'shubham-terraform'
-    backendAzureRmStorageAccountName: 'terraformstg97077'
+    backendAzureRmResourceGroupName: 'shubham-terraform1'
+    backendAzureRmStorageAccountName: 'terraformstg970777'
     backendAzureRmContainerName: 'containerterraform'
     backendAzureRmKey: 'terraform.tfstate'
 
