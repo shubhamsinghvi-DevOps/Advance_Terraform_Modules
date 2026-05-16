@@ -22,10 +22,7 @@ stages:
         backendAzureRmKey: 'terraform.tfstate'
     
 
-  - job: Terraform_Planing
-    displayName: Planing of Resources
-    dependsOn: Terraform_Initialization
-    steps:
+    
     - task: TerraformTask@5
       displayName: Planing_Azure_Resources
       inputs:
