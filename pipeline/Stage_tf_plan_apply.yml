@@ -51,7 +51,7 @@ stages:
 
   - job: Terraform_Applying
     dependsOn: Manual_validation
-    displayName: Terraform_Re-Initialization
+    displayName: Terraform Apply
     steps:
     - task: TerraformTask@5
       displayName: Intilization_Terraform
